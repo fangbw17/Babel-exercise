@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`unknown plugin 1. console.xx前插入了CallExpression的AST: 1. console.xx前插入了CallExpression的AST 1`] = `
+
+
+console.log(1);
+
+function func() {
+    console.log(2);
+}
+
+export default class Clazz {
+    say() {
+        console.debug(3);
+    }
+    render() {
+        return <div>{console.error(4)}</div>
+    }
+}
+            
+
+      ↓ ↓ ↓ ↓ ↓ ↓
+
+console.log(
+  "/Users/aaron/Desktop/Lpz/code/Babel/parameters-insert/src/plugin/__tests__/parameters-insert-plugin.test.js: (2, 0)"
+);
+console.log(1);
+function func() {
+  console.log(
+    "/Users/aaron/Desktop/Lpz/code/Babel/parameters-insert/src/plugin/__tests__/parameters-insert-plugin.test.js: (5, 4)"
+  );
+  console.log(2);
+}
+export default class Clazz {
+  say() {
+    console.log(
+      "/Users/aaron/Desktop/Lpz/code/Babel/parameters-insert/src/plugin/__tests__/parameters-insert-plugin.test.js: (10, 8)"
+    );
+    console.debug(3);
+  }
+  render() {
+    return (
+      <div>
+        {[
+          console.log(
+            "/Users/aaron/Desktop/Lpz/code/Babel/parameters-insert/src/plugin/__tests__/parameters-insert-plugin.test.js: (13, 21)"
+          ),
+          console.error(4),
+        ]}
+      </div>
+    );
+  }
+}
+
+`;
