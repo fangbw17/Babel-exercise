@@ -1,6 +1,6 @@
 const { transformFromAstSync } = require("@babel/core");
 const parser = require("@babel/parser");
-const autoI18nPlugin = require("./plugin/auto-i18n-plugin");
+const autoI18nPlugin = require("./plugins/auto-i18n-plugin");
 const fs = require("fs");
 const path = require("path");
 
